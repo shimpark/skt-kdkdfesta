@@ -1,0 +1,32 @@
+// data-table
+.data-table {
+    table {
+        table-layout: fixed;
+        width: 100%;
+        border-top: 1px solid #ddd;
+    }
+    th,
+    td {
+        padding: 0.5rem;
+        text-align: center;
+        @include vw(14px);
+        word-break: break-word;
+        @media (max-width: 360px) {
+            padding: 0.5rem 0.3rem;
+        }
+        &.left { text-align: left; }
+        &.center { text-align: center; }
+    }
+    th {
+        background-color: #f1f1f1;
+        border-bottom: 1px solid #ddd;
+    }
+    td {
+        border-bottom: 1px solid #ddd;
+        .bold {
+            font-weight: 700;
+            color: #222;
+            text-decoration: underline;
+        }
+    }
+}

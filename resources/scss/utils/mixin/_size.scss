@@ -1,0 +1,55 @@
+// size
+//
+// width / height 를 편하게....
+// width, height를 같게 하려면 @include size(100px);
+//                 다르게 하려면 @include size(100px, 1em);
+
+
+@mixin size($width, $height : $width) {
+	width: $width;
+	height: $height;
+}
+
+//// mixin
+// breakpoint
+// @include breakpoint(maxMobile){ ... }
+@mixin breakpoint($point) {
+    @if $point == desktop {
+        @media screen and (min-width: 1100px) { @content ; }
+    }
+    @if $point == minDesktop {
+        @media screen and (min-width: 1024px) { @content ; }
+    }
+    @if $point == maxMobile {
+        @media screen and (min-width: 720px) { @content ; }
+    }
+    @else if $point == minMobile {
+        @media screen and (max-width: 320px) { @content ; }
+    }
+}
+
+$max-mobile : 720;
+// percent
+// top: percent(722, 1000);
+// right: percent(50);
+@function percent($target, $parent: $max-mobile) {
+    @return percentage($target / $parent);
+}
+
+// Read the article: http://sassbreak.com/viewport-relative-headings-with-sass
+// Function
+@function get-vw($target){
+    // 1 vw is equal to 1% of the viewport width
+    $vw-context: ($max-mobile * .01) * 1px; // 1% viewport width
+    @return ($target/$vw-context) * 1vw;
+}
+
+// Mixin
+// @include vw(24px);
+@mixin vw($size){
+    font-size: get-vw($size);
+    // Prevent font-size from getting too big
+    @include breakpoint(maxMobile){
+        font-size: $size;
+    }
+}
