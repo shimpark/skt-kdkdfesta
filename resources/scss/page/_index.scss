@@ -152,7 +152,7 @@ img {
                 & + .sub-text {
                     margin-top: 5px;
                     @include multi-ellipsis(2, 1.2);
-                    font-weight: 300;
+                    font-weight: 500;
                     color: #999;
                     @include breakpoint(maxMobile){
                         margin-top: 10px;
@@ -196,7 +196,7 @@ img {
                 content: '';
                 position: absolute;
                 top: 50%;
-                right: 10%;
+                right: 20%;
                 display: block;
                 width: 18px;
                 height: 18px;
@@ -224,6 +224,9 @@ img {
         margin-top: 15px;
         @include vw(36px);
         &:first-child { margin-top: 0; }
+        &:last-child {
+            label { line-height: 1.5; }
+        }
         @include breakpoint(maxMobile){
             margin-top: 30px;
         }
@@ -232,7 +235,7 @@ img {
             line-height: 35px;
             letter-spacing: -1px;
             @include breakpoint(maxMobile){
-                padding-left: 77px;
+                padding-left: 77px; 
                 line-height: 70px;
             }
         }
@@ -297,8 +300,11 @@ img {
                 padding-left: 0.5rem;
                 text-indent: -0.42rem;
                 @include vw(26px);
-                font-weight: 300;
+                font-weight: 500;
                 color: #999;
+                @include breakpoint(maxMobile){
+                    font-size: .8rem;
+                }
                 & + li { margin-top: 0.05rem; }
             }
         }
@@ -377,7 +383,7 @@ img {
                 padding-left: 10px;
                 position: relative;
                 @include vw(20px);
-                font-weight: 300;
+                font-weight: 500;
                 color: #999;
                 &:before {
                     content: '-';
@@ -573,59 +579,6 @@ img {
         margin-top: 0.6rem;
     }
 }
-.benefit-intro-content {
-    .link-box {
-        text-align: center;
-        background-color: #fff;
-        &.bg {
-        background-color: #f6f6f6;
-        }
-        a {
-        display: block;
-        @include size(100%);
-        padding: 1.25rem 1rem;
-        box-sizing: border-box;
-        }
-        .title {
-        display: block;
-        margin-bottom: 0.5rem;
-        text-align: center;
-        font-weight: 700;
-        font-size: 0.85rem;
-        }
-        .btn-link {
-        display: inline-block;
-        padding: 0 0.85rem;
-        height: 1.75rem;
-        line-height: 1.75rem;
-        border-radius: 50px;
-        font-size: 0.7rem;
-        box-shadow: 0 0 8px 1px rgba(96, 96, 96, 0.3);
-        background-color: #fff;
-        color: #29a5d6;
-        &:after {
-            display: inline-block;
-            content: '';
-            @include size(0.675rem, 0.525rem);
-            margin-left: 0.2rem;
-            margin-top: -0.1rem;
-            vertical-align: middle;
-            background-repeat: no-repeat;
-            background-position: 0 0;
-            background-size: cover;
-            background-image: url('../images/icon-arrow-27x21-b.png');
-        }
-        &.blue {
-            background-color: #29a5d6;
-            color: #fff;
-            box-shadow: none;
-            &:after {
-            background-image: url('../images/icon-arrow-27x21-w.png');
-            }
-        }
-        }
-    }
-}
 .float-menu {
     display: flex;
     position: fixed;
@@ -708,12 +661,12 @@ img {
 }
 
 @-webkit-keyframes arrowEffect {
-    0%,100% { right: 10%; }
-    50% { right: 8%; }
+    0%,100% { right: 20%; }
+    50% { right: 18%; }
 }
 @keyframes arrowEffect {
-    0%,100% { right: 10%; }
-    50% { right: 8%; }
+    0%,100% { right: 20%; }
+    50% { right: 18%; }
 }
 
 // 2021-08-17
