@@ -220,14 +220,12 @@
   -webkit-transition: all 0.5s cubic-bezier(0.08, 0.69, 0.43, 0.95);
   transition: all 0.5s cubic-bezier(0.08, 0.69, 0.43, 0.95);
 }
-
-@media screen and (max-height: 900px) {
-  .layer-popup.benefit-popup .popup-body {
-    max-height: calc(100vh - 157px);
-    overflow-y: auto;
-  }
+/* 20210826 수정 */
+.layer-popup.benefit-popup .popup-body {
+  max-height: calc(100vh - 300px);
+  overflow-y: auto;
 }
-
+/* 20210826 수정 */
 .layer-popup.benefit-popup.open {
   visibility: visible;
   bottom: 0;

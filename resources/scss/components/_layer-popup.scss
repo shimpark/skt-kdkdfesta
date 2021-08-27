@@ -65,12 +65,12 @@
         visibility: hidden;
         -webkit-transition: all .5s cubic-bezier(0.08, 0.69, 0.43, 0.95);
         transition: all .5s cubic-bezier(0.08, 0.69, 0.43, 0.95);
-        @media screen and (max-height: 900px) {
+        //20210826 수정 
             .popup-body {
-                max-height: calc(100vh - 157px);
+                max-height: calc(100vh - 300px);
                 overflow-y: auto;
             }
-        }
+        //20210826 수정
         &.open {
             visibility: visible;
             bottom: 0;
